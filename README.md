@@ -12,7 +12,7 @@ Setting up Scala on Linux
 - install Java
 - install IntelliJ IDEA
 - install Scala plugin for IntelliJ IDEA from Plugin repository
-- download scala from http://www.scala-lang.org/download/
+- download Scala from http://www.scala-lang.org/download/
   - `wget http://downloads.typesafe.com/scala/2.11.7/scala-2.11.7.tgz`
 - extract downloaded archive
   - `tar -xzvf scala-2.11.7.tgz`
