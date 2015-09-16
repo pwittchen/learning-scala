@@ -48,3 +48,7 @@ object HelloWorld {
 ```
 
 - Right click on on `main(...)` function and choose `Run`.
+
+References
+----------
+- [Official Scala website](http://www.scala-lang.org)
