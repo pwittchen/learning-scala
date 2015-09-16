@@ -1,6 +1,11 @@
 # learning-scala
 Repository created in order to learn basics of Scala language
 
+Notes about Scala
+-----------------
+
+Notes from Scala tutorial are available in [`NOTES.md`](https://github.com/pwittchen/learning-scala/blob/master/NOTES.md) file
+
 IDE
 ---
 
