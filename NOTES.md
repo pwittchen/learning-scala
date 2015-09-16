@@ -61,17 +61,19 @@ String, Byte, Boolean, Char, Short, Int, Long, Float, Double
 Math
 ----
 
+In order to use math function, we need the following import
+
 ```scala
 import scala.math._
+```
 
-// various math functions
+sample math functions:
 
 ```scala
 round(...), floor(...), ceil(...), hypot(...),
 exp(...)  , pow(...)  , sqrt(...), abs(...),
 min(...)  , max(...)  , log(...) , log10(...),
 toRadians(...), toDegrees(...)
-```
 
 // generating random numbers
 
@@ -288,7 +290,6 @@ def getSum(args: Int*) : Int = {
   }
   sum
 }
-```
 
 println("Get sum " + getSum(1,2,3,4,5))
 ```
@@ -322,7 +323,7 @@ val friends2 = ArrayBuffer[String]()
 friends2.insert(0, "Phil")
 friends2 += "Mark"
 friends ++= Array("Susy", "Paul")
-friends2.insert(1, "Mike, "Sally", "Sam")
+friends2.insert(1, "Mike", "Sally", "Sam")
 friends2.remove(1, 2) // two elements starting at the second index
 
 var friend : String = " "
