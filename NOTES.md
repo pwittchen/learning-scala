@@ -3,7 +3,7 @@ Scala notes
 
 Notes from short video course about Scala covering basics of Scala programming language
 
-References: 
+References:
 - https://www.youtube.com/watch?v=DzFt0YkZo8M
 - http://www.newthinktank.com/2015/08/learn-scala-one-video/
 
@@ -22,6 +22,15 @@ Contents
 - [Recursion](#recursion)
 - [Arrays](#arrays)
 - [Maps](#maps)
+- [Tuples](#tuples)
+- [Classes](#classes)
+- [Traits](#traits)
+- [Higher order functions](#higher-order-functions)
+- [Map](#map)
+- [Filter](#filter)
+- [Closures](#closures)
+- [File I/O](#file-io)
+- [Exception handling](#exception-handling)
 
 Compiling and executing programs
 --------------------------------
@@ -198,7 +207,7 @@ for(i <- primeList) {
 
   if( i != 1) {
     println(i) // implementation of continue
-  } 
+  }
 
 }
 ```
@@ -385,7 +394,260 @@ println(sortedNums.deep.mkString(", "))
 Maps
 ----
 
-TBD.
+```scala
+// immutable map
+val employees = Map("Manager" -> "Bob Smith", "Secretary" -> "Sue Brown")
 
-....
+if(employees.contains("Manager"))
+  printf("Manager: %s\n", employees("Manager"))
 
+// mutable map
+
+val customers = collection.mutable.Map(100 -> "Paul Smith", 101 -> "Sally Smith")
+
+printf("Cust 1: %s\n", customers(100))
+
+customers(100) = "Tom Marks"
+customers(102) = "Megan Swift"
+
+for((k,v) <- customers)
+  printf("%d: %s\n", k, v)
+```
+
+Tuples
+------
+
+Tuples holds values of different types and are normally immutable
+
+```scala
+// creating tuple
+var tupleMarge = (103, "Marge Simpson", 10.25)
+
+// printing values of tuple
+printf("%s owes us $%.2f\n", tupleMarge._2, tupleMarge._3)
+
+// iterating through tuple
+tupleMarge.productIterator.foreach{ i => println(i)}
+
+// converting tuple to a String
+println(tupleMarge.toString())
+```
+
+Classes
+-------
+
+```scala
+class Animal(var name: String, var sound: String) {
+  this.setName(name)
+
+  val id = Animal.nweIdNum
+
+  // protected var name = "No Name"
+
+  def getName() : String = name
+  def getSound() : String = sound
+
+  def setName(name: String) {
+    if(!(name.matches(".*\\d+.*")))  // does not contain any decimals and numbers
+      this.name = name
+    else
+      this.name = "No Name"
+  }
+
+  def setSound(sound: String) {
+    this.sound = sound
+  }
+
+  // constructor
+  def this(name: String) {
+    this("No Name", "No Sound")
+    this.setName(name)
+  }
+
+  // constructor
+  def this() {
+    thi("No Name", "No Sound")
+  }
+
+  // overriding methods
+  override def toString() : String = {
+    return "%s with the id %d says %s".format(this.name, this.id, this.sound)
+  }
+}
+
+// static fields and static functions
+object Animal {
+  private var idNumber = 0
+  private def newIdNum = { idNumber += 1; idNumber}  
+}
+
+// creating objects (instances of classes)
+
+val rover = new Animal
+rover.setName("Rover")
+rover.setSound("Woof")
+printf("%s says %s\n", rover.getName, rover.getSound)
+
+val whiskers = new Animal("Whiskers", "Meow")
+println(s"${whiskers.getName} with id ${whiskers.id} says  ${whiskers.sound}")
+
+println(whiskers.toString)
+
+// inheritance
+
+class Dog(name: String, sound: String, growl: String) extends Animal(name, sound) {
+  def this(name: String, sound: String) {
+    this("No Name", sound, "No Growl")
+    this.setName(name)
+  }
+
+  def this(name: String) {
+    this("No Name", "No Sound", "No Growl")
+    this.setName(name)
+  }
+
+  def this() {
+    this("No Name", "No Sound", "No Growl")
+  }
+
+  override def toString() : String = {
+    return "%s with the id %d says %s or %s".format(this.name, this.id, this.sound, this.growl)
+  }
+}
+
+val spike = new Dog("Spike", "Woof", "Grrrr")
+spike.setName("Spike")
+println(spike.toString)
+
+// abstract classes
+
+abstract class Mammal(val name: String) {
+  var moveSpeed: Double
+  def move: String
+}
+
+class Wolf(name: String) extends Mammal(name) {
+  var moveSpeed = 35.0
+  def move = "The wolf %s runs %.2f mph".format(this.name, this.moveSpeed)
+}
+
+val fang = new Wolf("Fang")
+fang.moveSpeed = 36.0
+println(fang.move)
+```
+
+Traits
+------
+
+It's like a Java interface, but can provide concrete methods and fields.
+
+```scala
+trait Flyable {
+  def fly: String
+}
+
+trait BulletProof {
+  def hitByBullet: String
+
+  def ricochet(startSpeed: Double) : String = {
+    "The bullet ricochets at a speed of %.1f ft/sec".format(startSpeed * .75)  
+  }
+}
+
+class Superhero(val name: String) extends Flyable with BulletProof {
+  def fly = %s flies through the air".format(this.name)
+  def hitByBullet = "The bullet bounces off %s".format(this.name)
+}
+
+val superman = new Superhero("superman")
+println(superman.fly)
+println(superman.hitByBullet)
+println(superman.ricochet(2500))
+```
+
+Higher order functions
+----------------------
+
+```scala
+val log10Func = log10 _
+
+println(log10Func(1000))
+
+List(1000.0, 10000).map(log10Func).foreach(println)
+```
+
+Map
+---
+
+```scala
+List(1,2,3,4,5).map((x : Int) => x * 50).foreach(println)
+```
+
+Filter
+------
+
+```scala
+List(1,2,3,4,5).filter(_ % 2 == 0).foreach(println)
+
+def times3(num: Int) = num * 3
+def times4(num: Int) = num * 4
+
+def multIt(func: (Int) => Double, num: Int) = {
+  func(num)
+}
+
+printf("3 * 100 = %.1f\n", multIt(times4, 100))
+```
+
+Closures
+--------
+
+```scala
+val disorVal = 5
+val divisor5 = (num: Duble) => num / divisorVal
+println("5/5= " + divisorVal(5.0))
+```
+
+File I/O
+--------
+
+Necessary imports:
+
+```scala
+import java.io.PrintWriter // to write to a File
+import scala.io.Source
+```
+
+```scala
+// writing
+
+val writer = PrintWriter("test.txt")
+writer.write("Just some random text\nSome more random text")
+writer.close()
+
+// reading
+
+val textFromFile = Source.fromFile("test.txt", "UTF-8")
+val lineIterator = textFromFile.getLines
+
+for(line <- lineIterator)
+  println(line)
+
+textFromFile.close()
+```
+
+Exception handling
+------------------
+
+```scala
+def divideNums(num1: Int, num2: Int) = try
+{
+  (num1/num2)
+} catch {
+  case ex: java.lang.ArithmeticException => "Cant't divide by zero"
+} finally {
+  // clean up
+}
+
+println("3 / 0 = " + divideNums(3,0))
+```
