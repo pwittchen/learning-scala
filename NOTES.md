@@ -7,6 +7,22 @@ References:
 - https://www.youtube.com/watch?v=DzFt0YkZo8M
 - http://www.newthinktank.com/2015/08/learn-scala-one-video/
 
+Contents
+--------
+- [Compiling and executing programs](#compiling-and-executing-programs)
+- [Values and variables](#values-and-variables)
+- [Comments](#contents)
+- [Data types](#data-types)
+- [Math](#math)
+- [Conditional statements](#conditional-statemends)
+- [Loops](#loops)
+- [User's input/output](#users-inputoutput)
+- [Strings](#strings)
+- [Functions](#functions)
+- [Recursion](#recursion)
+- [Arrays](#arrays)
+- [Maps](#maps)
+
 Compiling and executing programs
 --------------------------------
 
