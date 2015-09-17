@@ -52,6 +52,6 @@ object HelloWorld {
 References
 ----------
 - [Official Scala website](http://www.scala-lang.org)
-- [Scala tutorial](https://www.youtube.com/watch?v=DzFt0YkZo8M)
-- [Scala tutorial - cheatsheet](http://www.newthinktank.com/2015/08/learn-scala-one-video/)
+- [Scala video tutorial (1h)](https://www.youtube.com/watch?v=DzFt0YkZo8M)
+- [Scala video tutorial - cheatsheet](http://www.newthinktank.com/2015/08/learn-scala-one-video/)
 - [Scala for the impatient - book](http://www.amazon.com/Scala-Impatient-Cay-S-Horstmann/dp/0321774094/)
