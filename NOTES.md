@@ -14,7 +14,7 @@ Contents
 - [Comments](#contents)
 - [Data types](#data-types)
 - [Math](#math)
-- [Conditional statements](#conditional-statemends)
+- [Conditional statements](#conditional-statements)
 - [Loops](#loops)
 - [User's input/output](#users-inputoutput)
 - [Strings](#strings)
