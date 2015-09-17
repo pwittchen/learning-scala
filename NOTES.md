@@ -11,7 +11,7 @@ Contents
 --------
 - [Compiling and executing programs](#compiling-and-executing-programs)
 - [Values and variables](#values-and-variables)
-- [Comments](#contents)
+- [Comments](#comments)
 - [Data types](#data-types)
 - [Math](#math)
 - [Conditional statements](#conditional-statements)
