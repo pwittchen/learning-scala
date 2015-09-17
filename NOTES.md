@@ -614,8 +614,8 @@ File I/O
 Necessary imports:
 
 ```scala
-import java.io.PrintWriter // to write to a File
-import scala.io.Source
+import java.io.PrintWriter // to write to a file
+import scala.io.Source     // to read from file
 ```
 
 ```scala
