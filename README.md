@@ -49,6 +49,13 @@ object HelloWorld {
 
 - Right click on on `main(...)` function and choose `Run`.
 
+SBT
+---
+
+SBT is the interactive build tool for Scala. Use Scala to define your tasks. Then run them in parallel from the shell.
+
+Visit [official website](http://www.scala-sbt.org/) and check instructions for [installing SBT on Linux](http://www.scala-sbt.org/0.13/tutorial/Installing-sbt-on-Linux.html).
+
 References
 ----------
 - [Official Scala website](http://www.scala-lang.org)
@@ -57,3 +64,6 @@ References
 - [Scala video tutorial (1h)](https://www.youtube.com/watch?v=DzFt0YkZo8M)
 - [Scala video tutorial - cheatsheet](http://www.newthinktank.com/2015/08/learn-scala-one-video/)
 - [Scala for the impatient - book](http://www.amazon.com/Scala-Impatient-Cay-S-Horstmann/dp/0321774094/)
+- [Scala SBT](http://www.scala-sbt.org/)
+- [Scala SBT downloads](http://www.scala-sbt.org/download.html)
+- [Installing SBT on Linux](http://www.scala-sbt.org/0.13/tutorial/Installing-sbt-on-Linux.html)
