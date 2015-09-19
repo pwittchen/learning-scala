@@ -54,7 +54,14 @@ SBT
 
 SBT is the interactive build tool for Scala. Use Scala to define your tasks. Then run them in parallel from the shell.
 
-Visit [official website](http://www.scala-sbt.org/) and check instructions for [installing SBT on Linux](http://www.scala-sbt.org/0.13/tutorial/Installing-sbt-on-Linux.html).
+Visit [official website](http://www.scala-sbt.org/) and check instructions for [installing SBT on Linux](http://www.scala-sbt.org/0.13/tutorial/Installing-sbt-on-Linux.html), which are as follows:
+
+```
+echo "deb https://dl.bintray.com/sbt/debian /" | sudo tee -a /etc/apt/sources.list.d/sbt.list
+sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 642AC823
+sudo apt-get update
+sudo apt-get install sbt
+```
 
 References
 ----------
