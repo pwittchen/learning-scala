@@ -30,6 +30,8 @@ export SCALA_HOME=/usr/local/share/scala
 export PATH=$PATH:$SCALA_HOME/bin
 ```
 
+**OR** skip all the steps above and just use [SDKMan](https://sdkman.io/).
+
 Compiling and running programs
 ------------------------------
 
