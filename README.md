@@ -9,6 +9,8 @@ Use sdkman: `sdk install scala`
 SBT
 ---
 
+[SBT](https://www.scala-sbt.org/) is a build tool for Scala
+
 - Use sdkman to install it: `sdk install sbt`
 - To run the app built with sbt, execute: `sbt run`
 - To run the tests, execute: `sbt test`
