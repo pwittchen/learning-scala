@@ -4,66 +4,21 @@ Repository created in order to learn basics of Scala language
 Notes about Scala
 -----------------
 
-Notes from Scala tutorial are available in [`NOTES.md`](https://github.com/pwittchen/learning-scala/blob/master/NOTES.md) file
-
-IDE
----
-
-IntelliJ IDEA with Scala plugin
+Notes from Scala tutorial are available in [`NOTES.md`](https://github.com/pwittchen/scala-playground/blob/master/notes/NOTES.md) file
 
 Setting up Scala on Linux
 -------------------------
 
-- install Java
-- install IntelliJ IDEA
-- install Scala plugin for IntelliJ IDEA from Plugin repository
-- download Scala from http://www.scala-lang.org/download/
-  - `wget http://downloads.typesafe.com/scala/2.11.7/scala-2.11.7.tgz`
-- extract downloaded archive
-  - `tar -xzvf scala-2.11.7.tgz`
-- rename extracted directory to `scala` and copy it to `/usr/share/` directory
-  - `sudo cp -avr scala /usr/share` 
-  - [copy command explanation*](http://www.cyberciti.biz/faq/copy-folder-linux-command-line/)
-- add appropriate environmental variables to your `.bashrc` or `.zshrc` file
-```
-export SCALA_HOME=/usr/local/share/scala
-export PATH=$PATH:$SCALA_HOME/bin
-```
-
-**OR** skip all the steps above and just use [SDKMan](https://sdkman.io/).
-
-Compiling and running programs
-------------------------------
-
-- Create Scala project
-- Put path to JDK. In my case: `/usr/lib/jvm/java-8-oracle`
-- Put path to Scala SDK: `/usr/local/share/scala`
-- Create file `HelloWorld.scala`
-
-```scala
-object HelloWorld {
-  def main(args: Array[String]) {
-    println("Hello, world!")
-  }
-}
-
-```
-
-- Right click on on `main(...)` function and choose `Run`.
+Use sdkman: `sdk install scala`
 
 SBT
 ---
 
 SBT is the interactive build tool for Scala. Use Scala to define your tasks. Then run them in parallel from the shell.
 
-Visit [official website](http://www.scala-sbt.org/) and check instructions for [installing SBT on Linux](http://www.scala-sbt.org/0.13/tutorial/Installing-sbt-on-Linux.html), which are as follows:
+Install it with sdkman: `sdk install sbt`
 
-```
-echo "deb https://dl.bintray.com/sbt/debian /" | sudo tee -a /etc/apt/sources.list.d/sbt.list
-sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 642AC823
-sudo apt-get update
-sudo apt-get install sbt
-```
+To run the app built with sbt, execute: `sbt run`
 
 References
 ----------
