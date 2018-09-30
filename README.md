@@ -1,4 +1,4 @@
-# learning-scala
+# scala-playground
 Repository created in order to learn basics of Scala language
 
 Notes about Scala
