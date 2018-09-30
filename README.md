@@ -1,22 +1,15 @@
 # scala-playground
 Repository created in order to learn basics of Scala language
 
-Notes about Scala
------------------
-
-Notes from Scala tutorial are available in [`NOTES.md`](https://github.com/pwittchen/scala-playground/blob/master/notes/NOTES.md) file
-
-Setting up Scala on Linux
--------------------------
+Installation
+------------
 
 Use sdkman: `sdk install scala`
 
 SBT
 ---
 
-SBT is the interactive build tool for Scala. Use Scala to define your tasks. Then run them in parallel from the shell.
-
-Install it with sdkman: `sdk install sbt`
+Use sdkman: `sdk install sbt`
 
 To run the app built with sbt, execute: `sbt run`
 
